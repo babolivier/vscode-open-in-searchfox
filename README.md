@@ -1,6 +1,7 @@
 # Open in Searchfox
 
-A simple VS Code extension to view Mozilla code in Searchfox.
+A simple VS Code extension to view Mozilla code in
+[Searchfox](https://searchfox.org/).
 
 To use this extension, simply navigate to the file and line to open, then
 right-click and select "Open in Searchfox". This will open Searchfox on the
