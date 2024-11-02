@@ -1,0 +1,9 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+
+# Temporarily ignore the dummy test file created by the code generation script.
+src/test
+.vscode-test.mjs

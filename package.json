@@ -1,0 +1,80 @@
+{
+  "name": "vscode-open-in-searchfox",
+  "displayName": "Open in Searchfox",
+  "description": "Open Mozilla code in Searchfox from the editor.",
+  "version": "0.9.0",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-open-in-searchfox.open",
+        "title": "Open in Searchfox"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Open in Searchfox",
+      "properties": {
+        "open-in-searchfox.domain": {
+          "type": "string",
+          "default": "searchfox.org",
+          "description": "Searchfox instance domain"
+        },
+        "open-in-searchfox.repository": {
+          "type": "string",
+          "default": "mozilla-central",
+          "description": "Default/main repository"
+        },
+        "open-in-searchfox.nested-repositories": {
+          "title": "Nested repositories",
+          "type": "object",
+          "description": "Mapping between subfolders and repositories"
+        },
+        "open-in-searchfox.use-https": {
+          "title": "Use HTTPS",
+          "type": "boolean",
+          "default": true,
+          "description": "Uncheck to use plain HTTP. It is not recommended to change this setting if the Searchfox instance that's being used is not a local one."
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "when": "vscode.window.activeTextEditor != undefined",
+          "command": "vscode-open-in-searchfox.open",
+          "group": "open-in-searchfox"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "open": "^10.1.0"
+  }
+}
