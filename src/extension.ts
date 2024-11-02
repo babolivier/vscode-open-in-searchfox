@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
       // associated to a specific repository.
       const config = vscode.workspace.getConfiguration("open-in-searchfox");
       const domain = config.get("domain");
-      const nested = config.get("nested-repositories");
+      const nested: {[key:string]: string} = config.get("nested-repositories", {});
       const use_https = config.get("use-https", true);
 
       let repository = config.get("repository");
