@@ -3,6 +3,12 @@
   "displayName": "Open in Searchfox",
   "description": "Open Mozilla code in Searchfox from the editor.",
   "version": "0.9.0",
+  "author": "Brendan Abolivier",
+  "license": " MPL-2.0",
+  "repository": {
+    "url": "https://github.com/babolivier/vscode-open-in-searchfox.git",
+    "type": "git"
+  },
   "engines": {
     "vscode": "^1.94.0"
   },
