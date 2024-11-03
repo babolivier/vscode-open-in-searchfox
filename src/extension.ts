@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
       () => {
         copyToClipboard();
       }
-    )
+    ),
   ];
 
   context.subscriptions.push(...commandDisposables);

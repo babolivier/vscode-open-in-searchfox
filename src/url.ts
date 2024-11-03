@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 import path from "path";
 import { Config } from "./config";
 import { Editor } from "./editor";
@@ -21,7 +25,10 @@ export class SearchfoxUrl {
    * @returns {string} - The URL as a string.
    */
   toString(): string {
-    const [repository, filePath] = this.#config.repositoryAndRelativePathForFile(this.#editor.currentFileAbsolutePath);
+    const [repository, filePath] =
+      this.#config.repositoryAndRelativePathForFile(
+        this.#editor.currentFileAbsolutePath
+      );
     const protocol = this.#config.protocol;
     const domain = this.#config.domain;
 
