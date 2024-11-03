@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.9.99]
+
+- New icon for the marketplace
+
 ## [0.9.9]
 
 - New context menu option: "Copy Searchfox URL to clipboard"
