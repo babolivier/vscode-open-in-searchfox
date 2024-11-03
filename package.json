@@ -21,8 +21,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-open-in-searchfox.open",
+        "command": "vscode-open-in-searchfox.openInBrowser",
         "title": "Open in Searchfox"
+      },
+      {
+        "command": "vscode-open-in-searchfox.copyToClipboard",
+        "title": "Copy Searchfox URL To Clipboard"
       }
     ],
     "configuration": {
@@ -39,12 +43,12 @@
           "default": "mozilla-central",
           "description": "Default/main repository"
         },
-        "open-in-searchfox.nested-repositories": {
+        "open-in-searchfox.nestedRepositories": {
           "title": "Nested repositories",
           "type": "object",
           "description": "Mapping between subfolders and repositories"
         },
-        "open-in-searchfox.use-https": {
+        "open-in-searchfox.useHttps": {
           "title": "Use HTTPS",
           "type": "boolean",
           "default": true,
@@ -56,7 +60,12 @@
       "editor/context": [
         {
           "when": "vscode.window.activeTextEditor != undefined",
-          "command": "vscode-open-in-searchfox.open",
+          "command": "vscode-open-in-searchfox.openInBrowser",
+          "group": "open-in-searchfox"
+        },
+        {
+          "when": "vscode.window.activeTextEditor != undefined",
+          "command": "vscode-open-in-searchfox.copyToClipboard",
           "group": "open-in-searchfox"
         }
       ]

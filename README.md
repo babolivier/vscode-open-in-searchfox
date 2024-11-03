@@ -18,8 +18,10 @@ the VS Code settings UI):
 
 * `open-in-searchfox.repository` (defaults to `"mozilla-central"`): The
   main/default repository to use.
-* `open-in-searchfox.nested-repositories` (defaults to `{}`): An optional
-  mapping between a sub-directory name and a repository.
+* `open-in-searchfox.nestedRepositories` (defaults to `{}`): An optional mapping
+  between a sub-directory name and a repository. If multiple sub-directories
+  match the current file (e.g. `foo` and `foo/bar`), then the most precise match
+  is preferred.
 
 For example, here is how one can use this extension with
 [`mozilla-central`](https://hg.mozilla.org/mozilla-central) open, and
@@ -30,7 +32,7 @@ sub-directory:
 {
     "open-in-searchfox": {
         "repository": "mozilla-central",
-        "nested-repositories": {
+        "nestedRepositories": {
             "comm": "comm-central"
         }
     }
@@ -45,5 +47,5 @@ instances of Searchfox:
 
 * `open-in-searchfox.domain` (defaults to `"searchfox.org"`): The domain of the
   Searchfox instance to use.
-* `open-in-searchfox.use-https` (defaults to `true`): Whether to use HTTPS in
+* `open-in-searchfox.useHttps` (defaults to `true`): Whether to use HTTPS in
   requests. This setting should only be disabled for local instances.
